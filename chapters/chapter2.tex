@@ -1,0 +1,21 @@
+% Chapter Template
+
+\chapter{Chapter title}\label{Chapter2}
+\lhead{Chapter 2. \emph{Order-Value Optimization}} 
+\lipsum
+\newpage
+\section{Example of an algorithm}
+\algorithm{alg:uvar}{Let $\delta>0$, $\sigma_{\min}>0$,
+$\alpha\in(0,1)$, and $x^0 \in \R^n$ be given. Set $k\leftarrow 0$.}{
+    \item\label{alg:uvar-step1} Choose $\sigma \geq \sigma_{\min}$ and initialize
+    $\ell\leftarrow 1$.
+    \begin{enumerate}
+        \item\lipsum[1]
+    \end{enumerate}
+    \item\label{alg:uvar-step2} Compute $\xtrial$ as a solution of
+    \begin{equation} \label{uvar-subpro}
+      \Minimize \max_{i \in I(x^k,\delta)}
+      \left\{ \nabla f_i(x^k)^T (x - x^k)\right\} +  \dfrac{\sigma}{2}\|x - x^k\|^2 .
+    \end{equation}
+}
+

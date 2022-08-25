@@ -1,0 +1,92 @@
+% Paquetes basicos cargados al inicio
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[a4paper,top=2.54cm,bottom=2.0cm,left=2.0cm,right=2.54cm]{geometry} % margenes
+\usepackage{amsmath,amsfonts,amssymb,amscd,amsthm,xspace}
+\theoremstyle{plain}
+\newtheorem{example}{Example}[chapter]
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\newtheorem{axiom}{Axiom}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{assumption}{Assumption}
+\renewcommand\theassumption{A\arabic{assumption}}
+
+% Paquetes adicionales
+\usepackage{natbib} % Bibliografia
+\usepackage{lipsum} % Generar lero leros
+\usepackage{setspace} % Para modificar el espaciio entre lineas
+\setstretch{1.6} 
+\usepackage{indentfirst} % Indentação do primeiro parágrafo
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage
+}
+
+\usepackage{multirow}
+\usepackage{float}
+
+\usepackage{url}
+
+% Show line numbers
+\usepackage[mathlines]{lineno}
+\renewcommand\linenumberfont{\normalfont\small\color{gray}}
+
+% Show labels
+% \usepackage{showlabels}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\xtrial}{x^{\mathrm{trial}}}
+\newcommand{\ytrial}{y^{\mathrm{trial}}}
+\newcommand{\flow}{f_{\mathrm{low}}}
+\newcommand{\Flow}{F_{\mathrm{low}}}
+\newcommand{\Fmin}{F_{\mathrm{min}}}
+\newcommand{\Imin}{I_{\mathrm{min}}}
+\newcommand{\Imax}{I_{\mathrm{max}}}
+\newcommand{\Pcal}{\mathcal{P}}
+
+\DeclareMathOperator*{\Minimize}{Minimize}
+\DeclareMathOperator*{\co}{co}
+\DeclareMathOperator*{\inter}{int}
+
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% %Estilo algoritmo Gustavo
+\usepackage{enumitem} % Essencial pro estilo algoritmo gustavo (enumera os passos)
+\setlist[enumerate,1]{itemindent=2em}
+\setlist[enumerate,2]{itemindent=3em}
+\newcounter{counter}
+\counterwithin{counter}{chapter}
+\newcommand{\algorithm}[3]{
+\refstepcounter{counter}
+\label{#1}
+{\noindent\bf Algorithm~\thecounter:} #2
+\vspace{-1.3\topsep}
+\begin{enumerate}[leftmargin=2.5\parindent]
+\renewcommand{\labelenumi}{\textbf{\theenumi}.}
+\renewcommand{\labelenumii}{\textbf{\theenumii}.}
+
+\renewcommand{\theenumi}{Step~\arabic{enumi}}
+\renewcommand{\theenumii}{Step~\arabic{enumi}.\arabic{enumii}}
+
+\setlength{\itemsep}{1ex}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+#3
+\end{enumerate}
+}
+\usepackage[usenames,svgnames,dvipsnames]{xcolor}% Para nuevos colores: DarkGreen, NavyBlue, DarkRed
+
+\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=DarkGreen,linkcolor=NavyBlue,urlcolor=DarkRed,filecolor=green,bookmarksopen=true]{hyperref} % links coloridos

@@ -1,0 +1,212 @@
+\documentclass[11pt,oneside,a4paper]{book}
+\input{packages}
+\newcommand{\autor}{Gustavo David Quintero Álvarez}
+\newcommand{\titulo}{Optimality conditions and complexity for Order-Value and Low Order-Value Optimization}
+
+\begin{document}
+\fancyhead{} % Clears all page headers and footers
+\rhead{\thepage} % Sets the right side header to show the page number
+\lhead{} % Clears the left side page header
+
+\pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+\renewcommand{\backrefpagesname}{Cited in page(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citacao
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		No citations in the text.%
+	\or
+		Cited on page #2.%
+	\else
+		Cited #1 times on pages #2.%
+	\fi}%
+% ---
+
+% Capa
+\begin{titlepage}
+\begin{center}
+\begin{minipage}[t][56mm][s]{96mm}
+          \vspace*{2cm plus 1.5cm minus 1.8cm}
+
+          \centering
+
+          {\Large \bfseries\titulo}\\[0.4cm] % Thesis title
+
+          \vspace{1cm plus 1cm minus 0.6cm}
+
+          {\Large\autor}
+
+          \vspace*{2cm plus 1.5cm minus 1.8cm}
+      \end{minipage}
+
+\vfill
+    \textsc{\large{
+    REPORT PRESENTED TO THE\\
+    INSTITUTE OF MATHEMATICS AND STATISTICS\\
+    OF THE UNIVERSITY OF SÃO PAULO\\
+    FOR THE DOCTOR OF SCIENCE\\
+    QUALIFYING EXAMINATION}}
+    
+    \vskip 1.5cm
+    \large{
+    Program: Applied Mathematics\\
+    Advisor: Prof. Dr. Ernesto Julian Goldberg Birgin\\
+    Co-advisor: Prof. Dr. Jose Mario Martínez Pérez}
+
+   	\vfill
+    \normalsize{This study was financed in part by the Coordenação de
+         Aperfeiçoamento\\ de Pessoal de Nível Superior -- Brasil
+         (CAPES) -- Finance Code 001}
+    
+    \vskip 1.5cm
+    \normalsize{São Paulo, Brasil}\\
+    \normalsize{August 2022}
+\end{center}
+\end{titlepage}
+
+\newpage
+%Folha de rosto
+\thispagestyle{empty}
+    \begin{center}
+ \begin{minipage}[t][56mm][s]{96mm}
+          \vspace*{2cm plus 1.5cm minus 1.8cm}
+          \centering
+          {\Large \bfseries \titulo}\\[0.4cm]
+           \vspace{1cm plus 1cm minus 0.6cm}
+
+           {\Large\autor}
+
+          \vspace*{2cm plus 1.5cm minus 1.8cm}
+      \end{minipage}
+     \end{center}
+\vskip 2cm
+\setstretch{1.3}
+   \begin{flushright}
+      \begin{minipage}[t][50mm][s]{80mm}
+        \begin{flushright}
+          \normalsize{
+          This is the original version of the qualifying text
+          prepared by candidate Gustavo David Quintero Álvarez,
+          as submitted to the Examining Committee. 
+          }
+        \end{flushright}
+        \vspace*{0pt plus 50mm}
+      \end{minipage}
+      \par
+    %} % fbox
+  \end{flushright}
+
+\afterpage{\blankpage}
+
+% Agradecimentos
+\clearpage 
+\thispagestyle{plain}
+\pagenumbering{roman} 
+\begin{center}{\huge{\textit{Acknowledgements}} \par}\end{center}
+\vspace{1em}
+\lipsum[1]
+\lipsum[1]
+\vfil\vfil\null
+
+% Resumo
+\afterpage{\blankpage}
+\clearpage % Start a new page
+ \thispagestyle{empty}
+  %\null\vfil
+  \begin{flushleft}
+    \setlength{\parskip}{0pt}
+    {\centering{\huge{\textit{Resumo}}} \par} 
+    \bigskip
+		\begin{center}
+\noindent\begin{minipage}{0.75\textwidth}
+\small{\autor. \textbf{Condições de otimalidade e complexidade para a otimização de valor ordenado e a menor soma de valor ordenado}. 
+Exame de Qualificação (Doutorado) - Instituto de Matemática e Estatística,
+Universidade de São Paulo, São Paulo, 2022.}
+\end{minipage}
+\end{center}
+\end{flushleft}
+\bigskip
+\input{chapters/resumo}
+
+% Abstract
+\afterpage{\blankpage}
+\clearpage % Start a new page
+\thispagestyle{empty}
+  %\null\vfil
+  \begin{flushleft}
+    \setlength{\parskip}{0pt}
+    {\centering{\huge{\textit{Abstract}}} \par} 
+    \bigskip
+		\begin{center}
+\noindent\begin{minipage}{0.75\textwidth}
+\small{\autor. \textbf\titulo. 
+Qualifying Exam (Doctorate) - Institute of Matemathics and Statistics,
+University of São Paulo, São Paulo, 2022.}
+\end{minipage}
+\end{center}
+\end{flushleft}
+\bigskip
+\input{chapters/abstract}
+
+% Sumario
+\lhead{\emph{Contents}} % Set the left side page header to "Contents"
+\let\cleardoublepage\clearpage
+\tableofcontents
+
+% Lista de figuras
+\lhead{\emph{List of Figures}} % Set the left side page header to "List of Figures"
+\listoffigures % Write out the List of Figures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+% Lista de tabelas
+\lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
+\listoftables % Write out the List of Tables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
+
+% Lista de abreviacoes
+\lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
+\chapter*{Abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
+
+% Lista de simbolos
+\lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
+\chapter*{List of Symbols}
+\begin{tabular}{ll}
+        $\omega$    & Frequência angular\\
+        $\psi$      & Função de análise \emph{wavelet}\\
+        $\Psi$      & Transformada de Fourier de $\psi$\\
+\end{tabular}
+\addcontentsline{toc}{chapter}{List of Symbols}
+
+% Dedicatoria
+\clearpage
+\thispagestyle{empty}
+\setstretch{1.3} % Return the line spacing back to 1.3
+\pagestyle{empty} % Page style needs to be empty for this page
+\vspace*{\fill}
+\begin{center}
+{\Large\it to my parents}
+\end{center}
+\vspace*{\fill}
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+\pagestyle{fancy}
+\setlength{\parskip}{0.5\baselineskip} % Set space between paragraphs
+% Conteudo
+\linenumbers
+\input{chapters/chapter1} 
+\input{chapters/chapter2} 
+\nolinenumbers
+
+% Bibliografia
+\backmatter
+\nocite{*}
+\lhead{\emph{Bibliography}}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{apalike}
+\bibliography{bibliography}
+\end{document}
