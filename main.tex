@@ -1,7 +1,10 @@
 \documentclass[11pt,oneside,a4paper]{book}
 \input{packages}
-\newcommand{\autor}{Gustavo David Quintero Álvarez}
-\newcommand{\titulo}{Optimality conditions and complexity for Order-Value and Low Order-Value Optimization}
+\newcommand{\autor}{Name of the work's author}
+\newcommand{\tituloen}{English title}
+\newcommand{\titulopt}{Título em Portugués}
+\newcommand{\orientador}{Prof. Dr. Advisor name}
+\newcommand{\coorientador}{Prof. Dr. Co-advisor name}
 
 \begin{document}
 \fancyhead{} % Clears all page headers and footers
@@ -23,6 +26,59 @@
 		Cited #1 times on pages #2.%
 	\fi}%
 % ---
+% TIPO DE TRABALHOS
+% Copiar e colar na parte "Tipo de trabalho" da capa
+
+% Qualificação:
+
+%RELATÓRIO APRESENTADO AO\\
+%INSTITUTO DE MATEMÁTICA E ESTATÍSTICA\\
+%DA UNIVERSIDADE DE SÃO PAULO\\
+%PARA EXAME DE QUALIFICAÇÃO DE\\
+%DOUTOR(A) EM CIÊNCIAS
+
+% Dissertação:
+
+%DISSERTAÇÃO APRESENTADA AO\\
+%INSTITUTO DE MATEMÁTICA E ESTATÍSTICA\\
+%DA UNIVERSIDADE DE SÃO PAULO\\
+%PARA OBTENÇÃO DO TÍTULO DE\\
+%MESTRE(A) EM CIÊNCIAS
+
+% Tese:
+
+%TESE APRESENTADA AO\\
+%INSTITUTO DE MATEMÁTICA E ESTATÍSTICA\\
+%DA UNIVERSIDADE DE SÃO PAULO\\
+%PARA OBTENÇÃO DO TÍTULO DE\\
+%DOUTOR(A) EM CIÊNCIAS
+
+% APOIO
+% Copiar e colar na parte "Tipo de apoio" da capa
+% Norma sobre agradecimento por auxílios da FAPESP:
+% https://fapesp.br/11789/referencia-ao-apoio-da-fapesp-em-todas-as-		formas-de-divulgacao
+%
+% Norma sobre agradecimento por auxílios da CAPES (Portaria 206,
+% de 4 de Setembro de 2018):
+% https://www.in.gov.br/materia/-/asset_publisher/Kujrw0TZC2Mb/content/id/39729251/do1-2018-09-05-portaria-n-206-de-4-de-setembro-de-2018-39729135
+
+% Apoio (CAPES):
+
+% O presente trabalho foi realizado com apoio da Coordenação
+%       de Aperfeiçoamento\\ de Pessoal de Nível Superior -- Brasil
+%       (CAPES) -- Código de Financiamento 001}, % o código é sempre 001
+%
+% This study was financed in part by the Coordenação de
+%       Aperfeiçoamento\\ de Pessoal de Nível Superior -- Brasil
+%       (CAPES) -- Finance Code 001, % o código é sempre 001
+
+% Apoio (FAPESP):
+
+% Durante o desenvolvimento deste trabalho, o autor recebeu\\
+%       auxílio financeiro da FAPESP -- processo nº aaaa/nnnnn-d,
+%
+% During the development if this work, the author received\\
+%       financial support from FAPESP -- grant \#aaaa/nnnnn-d,
 
 % Capa
 \begin{titlepage}
@@ -32,7 +88,7 @@
 
           \centering
 
-          {\Large \bfseries\titulo}\\[0.4cm] % Thesis title
+          {\Large \bfseries\tituloen}\\[0.4cm] % Thesis title
 
           \vspace{1cm plus 1cm minus 0.6cm}
 
@@ -42,6 +98,10 @@
       \end{minipage}
 
 \vfill
+% Dissertação:
+
+
+% Tipo de trabalho
     \textsc{\large{
     REPORT PRESENTED TO THE\\
     INSTITUTE OF MATHEMATICS AND STATISTICS\\
@@ -52,10 +112,11 @@
     \vskip 1.5cm
     \large{
     Program: Applied Mathematics\\
-    Advisor: Prof. Dr. Ernesto Julian Goldberg Birgin\\
-    Co-advisor: Prof. Dr. Jose Mario Martínez Pérez}
+    Advisor: \orientador\\
+    Co-advisor: \coorientador}
 
    	\vfill
+   	% Apoio
     \normalsize{This study was financed in part by the Coordenação de
          Aperfeiçoamento\\ de Pessoal de Nível Superior -- Brasil
          (CAPES) -- Finance Code 001}
@@ -67,13 +128,38 @@
 \end{titlepage}
 
 \newpage
+% Para a folha de rosto copiar segundo o tipo de trabalho na parte "Texto folha de rosto" abaixo.
+
+% Qualificação:
+
+%This is the original version of the qualifying text
+%prepared by candidate \autor,
+%as submitted to the Examining Committee.
+
+%Esta é a versão original do texto de qualificação elaborado pelo(a) candidato(a) \autor, 
+%tal como submetido à Comissão Julgadora.
+
+% Dissertação:
+
+%This is the original version of the master thesis prepared
+%by candidate \autor, as submitted to the Examining Committee.
+
+%Esta é a versão original da dissertação elaborada pelo(a) candidato(a) \autor, tal como submetida à Comissão Julgadora.
+
+% Tese:
+
+%This is the original version of the thesis prepared
+%by candidate \autor, as submitted to the Examining Committee.
+
+%Esta é a versão original da tese elaborada pelo(a) candidato(a) \autor, tal como submetida à Comissão Julgadora.
+
 %Folha de rosto
 \thispagestyle{empty}
     \begin{center}
  \begin{minipage}[t][56mm][s]{96mm}
           \vspace*{2cm plus 1.5cm minus 1.8cm}
           \centering
-          {\Large \bfseries \titulo}\\[0.4cm]
+          {\Large \bfseries \tituloen}\\[0.4cm]
            \vspace{1cm plus 1cm minus 0.6cm}
 
            {\Large\autor}
@@ -86,9 +172,10 @@
    \begin{flushright}
       \begin{minipage}[t][50mm][s]{80mm}
         \begin{flushright}
+        % Texto folha de rosto
           \normalsize{
           This is the original version of the qualifying text
-          prepared by candidate Gustavo David Quintero Álvarez,
+          prepared by candidate \autor,
           as submitted to the Examining Committee. 
           }
         \end{flushright}
@@ -121,7 +208,7 @@
     \bigskip
 		\begin{center}
 \noindent\begin{minipage}{0.75\textwidth}
-\small{\autor. \textbf{Condições de otimalidade e complexidade para a otimização de valor ordenado e a menor soma de valor ordenado}. 
+\small{\autor. {\bfseries\titulopt}. 
 Exame de Qualificação (Doutorado) - Instituto de Matemática e Estatística,
 Universidade de São Paulo, São Paulo, 2022.}
 \end{minipage}
@@ -141,7 +228,7 @@ Universidade de São Paulo, São Paulo, 2022.}
     \bigskip
 		\begin{center}
 \noindent\begin{minipage}{0.75\textwidth}
-\small{\autor. \textbf\titulo. 
+\small{\autor. \textbf\tituloen. 
 Qualifying Exam (Doctorate) - Institute of Matemathics and Statistics,
 University of São Paulo, São Paulo, 2022.}
 \end{minipage}
